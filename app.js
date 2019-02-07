@@ -36,7 +36,8 @@ function getNum(max) {
 let computerChoice = ''
 
 function getCompChoice() {
-  return computerChoice = 'rock'
+  computerChoice = 'rock'
+  return
 }
 
 function play(playerChoice) {
