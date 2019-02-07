@@ -21,19 +21,36 @@ function drawRPS() {
     template += `
       <div class="col-4 justify-content-center">
         <img src="${item.image}" class="rounded shadow mt-2" height="200px" width="200px">
-
-          <button onclick="play('${key}')" class="btn btn-info my-2">${key}</button>
-        </div>
+        <button onclick="play('${key}')" class="btn btn-info my-2">${key}</button>
+      </div>
         `
     document.getElementById('imageButtons').innerHTML = template
   }
 }
 drawRPS()
 
-let computerChoice = Math.floor(Math.random() * 3)
+function getNum(max) {
+  return Math.floor(Math.random() * max);
+}
 
+let computerChoice = ''
+
+function getCompChoice() {
+  return computerChoice = 'rock'
+}
 
 function play(playerChoice) {
   let result = ''
-
+  for (let key in choices) {
+    let choice = choices[key]
+    if (playerChoice == computerChoice) {
+      result = 'tie'
+    } else if (playerChoice == choices[key].beats) {
+      result = 'banana'
+    } else {
+      result = 'apple'
+    }
+  }
+  debugger
+  document.querySelector('h2').innerHTML = result
 }
